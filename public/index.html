@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+        <script src="client.js"></script>
+        <title>Assignment 3 Chat</title>
+    </head>
+    <body>
+        <div class="chat">
+			<div class="title">
+               <span>Assignment 3 Chat</span>
+            </div>
+               <div class="chat-box">
+                <div class="nicknames">
+                    <ul id="names">
+                        <li class="note"><a>Online Users</a></li>
+                    </ul>
+                    <div class="user">
+                        <div class="name">
+                        </div>
+                    </div>
+                </div>
+                <div class="message-area">
+                    <div class="message-box">
+                        <ul id="messages">
+                        </ul>
+                    </div>
+                    <div class="input">
+                        <form action="" class="">
+                            <input id="m" autocomplete="off" />
+                            <button>Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Questrial" rel="stylesheet">
+	<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <title>Socket.IO chat</title>
+    <style>
+	  @import url('https://fonts.googleapis.com/css?family=Lato|Questrial');
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      .container{
+    background: #ffffff;
+    width: 75%;
+    margin: 50px auto;
+    border-radius: 6px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    height: 90vh;
+    position: relative;
+    min-height: 550px;
+    min-width: 900px;
+}
+
+.app-name{
+    padding: 15px;
+    position: relative;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+.chat-box{
+    position: absolute;
+    padding-left: 155px;
+    top: 40px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.users-list{
+    position: absolute;
+    width: 155px;
+    background: #D1E6C1;
+    float: left;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.users-list ul li {
+    padding: 15px;
+    color: #252226;
+    display: block;
+    position: relative;
+    transition: all 0.2s linear;
+    text-decoration: none;
+    border-bottom: 1px solid #8B9E6C;
+}
+
+.users-list ul li span {
+    margin-left: 22px;
+    display: inline-block;
+}
+
+.users-list ul li a {
+    font-family: 'Roboto Slab', serif;
+    font-size: 9pt;
+    color: #ffffff;
+}
+
+.users-list ul .icon{
+    background: #96A88E;
+}
+
+.me {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 35px;
+    padding: 8px;
+    background: #96A88E;
+}
+
+.me > i {
+    margin-top: 10px;
+    float: left;
+    position: relative;
+    margin-left: 5px;
+    color: #ffffff;
+}
+
+.me .name {
+    color: #fff;
+    margin-left: 14px;
+    float: left;
+    display: block;
+    margin-top: 9px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 9pt;
+}
+
+.message-area{
+    border-top: 1px solid #753740;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 155px;
+}
+
+.message-area .message-list {
+    border-bottom: 1px solid #753740;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 44px;
+    overflow-y: auto;
+    outline: none;
+}
+
+.message-list ul > li {
+    border-top: 1px solid #753740;
+    overflow: hidden;
+    position: relative;
+    padding: 14px;
+    line-height: 20px;
+}
+
+.message-area ul > li:nth-child(odd){
+    background: #F4E5E2;
+}
+
+.message-list ul > li:first-child {
+    border-top: none;
+}
+
+.mesaage-list ul .un{
+    text-align: right;
+    float: left;
+    width: 75px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.message-list ul .message {
+    float: left;
+    color: #252226;
+    line-height: 20px;
+    font-style: italic;
+}
+
+.message-list ul .time {
+    top: 25px;
+    right: 10px;
+    color: #C33E4C;
+    position: absolute;
+}
+
+.input {
+    background:#E7C9A7;
+    padding: 8px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+            <div class="app-name">
+                <span>Chat</span>
+            </div>
+               <div class="chat-box">
+                <div class="users-list">
+                    <ul id="users">
+                        <li class="icon"><a><em class="fa fa-users"></em> &nbsp; Online Users</a></li>
+                    </ul>
+                    <div class="me">
+                        <i class="fa fa-user"></i>
+                        <div class="name">
+                        </div>
+                    </div>
+                </div>
+                <div class="message-area">
+                    <div class="message-list">
+                        <ul id="messages">
+                        </ul>
+                    </div>
+                    <div class="input">
+                        <form action="" class="">
+                            <input id="m" autocomplete="off" />
+                            <button>Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </body>
+</html>

@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Questrial');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+body{
+    background-color:  #36393e;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1;
+}
+
+ul {
+    list-style: none;
+}
+
+.chat{
+    background: #36393e;
+    width: 100%;
+    margin: 50px auto;
+    border-radius: 6px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    height: 75%;
+    position: relative;
+    min-height: 550px;
+    min-width: 900px;
+}
+
+.title{
+    padding: 15px;
+    position: relative;
+    font-family: 'Questrial', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+.chat-box{
+    position: absolute;
+    padding-left: 155px;
+    top: 40px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.nicknames{
+    position: absolute;
+    width: 155px;
+    background: #36393e;
+    float: left;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.nicknames ul li {
+    padding: 15px;
+    color: #36393e;
+    display: block;
+    position: relative;
+    transition: all 0.2s linear;
+    text-decoration: none;
+    border-bottom: 1px solid #36393e;
+}
+
+.nicknames ul li span {
+    margin-left: 22px;
+    display: inline-block;
+}
+
+.nicknames ul li a {
+    font-family: 'Questrial', sans-serif;
+    font-size: 9pt;
+    color: #ffffff;
+}
+
+.nicknames ul .icon{
+    background: #36393e;
+}
+
+.user {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 35px;
+    padding: 8px;
+    background: #36393e;
+}
+
+.user .name {
+    color: #fff;
+    margin-left: 14px;
+    float: left;
+    display: block;
+    margin-top: 9px;
+    font-family: 'Questrial', sans-serif;
+    font-size: 9pt;
+}
+
+.message-area{
+    border-top: 1px solid #36393e;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 155px;
+}
+
+.message-area .message-box {
+    border-bottom: 1px solid #36393e;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 44px;
+    overflow-y: auto;
+    outline: none;
+}
+
+.message-box ul > li {
+    border-top: 1px solid #36393e;
+    overflow: hidden;
+    position: relative;
+    padding: 14px;
+    line-height: 20px;
+}
+
+.message-area ul > li:nth-child(odd){
+    background: #424549;
+}
+
+.message-box ul > li:first-child {
+    border-top: none;
+}
+
+.mesaage-list ul .un{
+    text-align: right;
+    float: left;
+    width: 75px;
+    font-family: 'Questrial', sans-serif;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.message-box ul .message {
+    float: left;
+    color: #ffffff;
+    line-height: 20px;
+    font-style: italic;
+}
+
+.message-box ul .time {
+    top: 25px;
+    right: 10px;
+    color: #8D8F91;
+    position: absolute;
+}
+
+.input {
+    background:#424549;
+    padding: 8px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+form input{
+    background: #424549;
+	color: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0 0;
+    outline: none;
+    width: 90%;
+}
+
+form button {
+    width: 9%;
+    font-size: 9pt;
+    font-family: 'Questrial', sans-serif;
+    background: #424549;
+    color: #ffffff;
+    border-radius: 5px;
+    height: 35px;
+    line-height: 30px;
+    float:right;
+}
